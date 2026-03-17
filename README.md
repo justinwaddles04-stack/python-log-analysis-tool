@@ -9,6 +9,10 @@ The goal of this project is to analyze authentication logs to identify abnormal 
 ** Tools Used
 - Python
 
+** Contents
+- log_analysis.py
+- log-analysis-output.png
+
 ** Features
 - Detection of repeated failed login attempts
 - Identification of unusual login patterns
