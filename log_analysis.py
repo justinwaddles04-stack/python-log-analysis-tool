@@ -13,21 +13,38 @@ logs = [
 ]
 
 failed_logins = {}
+total_failed_attempts = 0
 
 for entry in logs:
     timestamp, username, status = entry.split(",")
 
     if status == "LOGIN_FAILED":
+        total_failed_attempts += 1
         if username in failed_logins:
             failed_logins[username] += 1
         else:
             failed_logins[username] = 1
 
-print("Failed Login Summary:")
+print("Authentication Log Analysis Report")
+print("=" * 40)
+
+print("\nFailed Login Summary:")
 for username, count in failed_logins.items():
     print(f"{username}: {count} failed login attempts")
 
-print("\nSuspicious Activity:")
+print(f"\nTotal Failed Login Attempts: {total_failed_attempts}")
+
+sorted_failed_logins = sorted(
+    failed_logins.items(),
+    key=lambda item: item[1],
+    reverse=True
+)
+
+print("\nTop Suspicious Accounts:")
+for username, count in sorted_failed_logins:
+    print(f"{username}: {count} failed login attempts")
+
+print("\nSuspicious Activity Alerts:")
 for username, count in failed_logins.items():
     if count >= 3:
         print(f"ALERT: {username} has {count} failed login attempts")
