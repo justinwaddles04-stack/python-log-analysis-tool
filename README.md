@@ -1,29 +1,29 @@
-** Python Log Analysis Tool
+## Python Log Analysis Tool
 
-** Overview
+## Overview
 This project is a Python-based log analysis tool designed to detect suspicious authentication activity and identify potential security risks from login data.
 
-** Objective
+## Objective
 The goal of this project is to analyze authentication logs and identify abnormal patterns such as repeated failed login attempts and potential brute-force or unauthorized access activity.
 
-** Tools Used
+## Tools Used
 - Python
 
-** Project Contents
+## Project Contents
 - `log_analysis.py` – log analysis script
 - `log-analysis-output.png` – example output
 
-** Key Features
+## Key Features
 - Parses authentication logs to extract timestamps, usernames, and login outcomes
 - Aggregates failed login attempts by user account
 - Identifies top suspicious accounts based on repeated login failures
 - Generates alerts for potential brute-force or suspicious login activity
 - Calculates total failed login attempts for overall visibility
 
-** Methodology
+## Methodology
 Log entries are processed using Python to identify failed login events. The script aggregates failures by username, ranks accounts based on failed attempts, and applies thresholds to flag suspicious activity.
 
-** Example Output
+## Example Output
 
 Authentication Log Analysis Report
 ========================================
@@ -43,5 +43,5 @@ ALERT: mbrown has 3 failed login attempts
 ALERT: jsmith has 3 failed login attempts
 
 
-** Outcome
+## Outcome
 This project demonstrates the ability to analyze authentication logs, detect suspicious patterns, and generate actionable security insights using Python. It reflects foundational skills in security monitoring and threat detection aligned with security analyst and GRC workflows.
